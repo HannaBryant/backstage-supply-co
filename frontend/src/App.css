@@ -391,7 +391,6 @@
 .bsc-action-group {
   display: flex;
   gap: 0.4rem;
-  justify-content: flex-end;
 }
 
 /* --- Modal --- */
@@ -818,5 +817,165 @@
   .bsc-chat-toggle {
     bottom: 1rem;
     right: 1rem;
+  }
+}
+
+/* ============================================================
+   @n8n/chat WIDGET — Gothic Theme via CSS Variable Overrides
+   This is the ONLY reliable way to style the n8n chat widget.
+   ============================================================ */
+
+/* Override the widget's own CSS custom properties */
+.n8n-chat {
+  --chat--color--primary: #c45c00 !important;
+  --chat--color--primary-shade-50: #b00000 !important;
+  --chat--color--primary--shade-100: #8b0000 !important;
+  --chat--color--secondary: #c45c00 !important;
+  --chat--color-secondary-shade-50: #7a3800 !important;
+  --chat--color-white: #f0ece4 !important;
+  --chat--color-light: #1a1a1a !important;
+  --chat--color-light-shade-50: #2e2e2e !important;
+  --chat--color-light-shade-100: #2e2e2e !important;
+  --chat--color-medium: #2e2e2e !important;
+  --chat--color-dark: #1a1a1a !important;
+  --chat--color-disabled: #7a7570 !important;
+  --chat--color-typing: #c45c00 !important;
+
+  --chat--font-family: 'Inter', system-ui, Helvetica, Arial, sans-serif !important;
+
+  --chat--header--background: #222222 !important;
+  --chat--header--color: #f0ece4 !important;
+  --chat--heading--font-size: 1.1em !important;
+
+  --chat--body--background: #1a1a1a !important;
+
+  --chat--message--bot--background: #2e2200 !important;
+  --chat--message--bot--color: #c8c3ba !important;
+  --chat--message--bot--border: 1px solid #6b4f00 !important;
+
+  --chat--message--user--background: #8b0000 !important;
+  --chat--message--user--color: #f0ece4 !important;
+  --chat--message--user--border: 1px solid #7a3800 !important;
+
+  --chat--message--pre--background: rgba(184, 134, 11, 0.08) !important;
+
+  --chat--toggle--background: #8b0000 !important;
+  --chat--toggle--hover--background: #b00000 !important;
+  --chat--toggle--active--background: #c45c00 !important;
+  --chat--toggle--color: #f0ece4 !important;
+
+  --chat--input--background: #1a1a1a !important;
+  --chat--input--text-color: #d4d0cb !important;
+  --chat--input--container--background: #222222 !important;
+  --chat--input--container--border: 1px solid #2e2e2e !important;
+  --chat--input--send--button--background: transparent !important;
+  --chat--input--send--button--color: #c45c00 !important;
+  --chat--input--send--button--background-hover: rgba(196, 92, 0, 0.15) !important;
+  --chat--input--send--button--color-hover: #b8860b !important;
+
+  --chat--button--color--primary: #f0ece4 !important;
+  --chat--button--background--primary: #8b0000 !important;
+  --chat--button--border--primary: 1px solid #8b0000 !important;
+  --chat--button--color--primary--hover: #f0ece4 !important;
+  --chat--button--background--primary--hover: #b00000 !important;
+  --chat--button--border--primary--hover: 1px solid #b00000 !important;
+
+  --chat--close--button--color-hover: #c45c00 !important;
+
+  --chat--footer--background: #222222 !important;
+  --chat--footer--color: #7a7570 !important;
+  --chat--footer--border-top: 1px solid #2e2e2e !important;
+
+  --chat--window--border: 1px solid #7a3800 !important;
+}
+
+/* Launcher button flame animation */
+.n8n-chat .chat-toggle {
+  animation: launcher-flame 3s ease-in-out infinite alternate !important;
+  border: 2px solid #7a3800 !important;
+}
+
+@keyframes launcher-flame {
+  0%   { box-shadow: 0 4px 16px rgba(196, 92, 0, 0.3), 0 0 0 0 rgba(184, 134, 11, 0.2); }
+  33%  { box-shadow: 0 4px 24px rgba(196, 92, 0, 0.6), 0 0 12px 2px rgba(184, 134, 11, 0.3); }
+  66%  { box-shadow: 0 4px 20px rgba(139, 0, 0, 0.5), 0 0 8px 1px rgba(196, 92, 0, 0.4); }
+  100% { box-shadow: 0 4px 28px rgba(184, 134, 11, 0.5), 0 0 14px 3px rgba(196, 92, 0, 0.3); }
+}
+
+/* Header title — smaller, gothic font */
+.n8n-chat .chat-header h1 {
+  font-family: 'Cinzel', 'Palatino Linotype', Georgia, serif !important;
+  font-size: 0.85rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+}
+
+/* Header subtitle — hidden */
+.n8n-chat .chat-header p {
+  display: none !important;
+}
+
+/* Flame accent line under header */
+.n8n-chat .chat-header {
+  position: relative !important;
+  border-bottom: none !important;
+}
+
+.n8n-chat .chat-header::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    #5a0000,
+    #c45c00,
+    #b8860b,
+    #c45c00,
+    #5a0000
+  );
+  background-size: 200% 100%;
+  animation: flame-sweep 4s linear infinite;
+}
+
+/* Bot message bubble glow */
+.n8n-chat .chat-message-from-bot .chat-message-body {
+  animation: bubble-flame 3s ease-in-out infinite alternate;
+}
+
+@keyframes bubble-flame {
+  0%   { box-shadow: 0 0 4px rgba(184, 134, 11, 0.15); }
+  50%  { box-shadow: 0 0 10px rgba(184, 134, 11, 0.3); }
+  100% { box-shadow: 0 0 6px rgba(184, 134, 11, 0.2); }
+}
+
+/* Send button flame glow */
+.n8n-chat .chat-input-send-button {
+  animation: send-btn-flame 2.5s ease-in-out infinite alternate;
+}
+
+@keyframes send-btn-flame {
+  0%   { box-shadow: 0 0 4px rgba(196, 92, 0, 0.3); }
+  50%  { box-shadow: 0 0 14px rgba(196, 92, 0, 0.5), 0 0 4px rgba(184, 134, 11, 0.3); }
+  100% { box-shadow: 0 0 8px rgba(184, 134, 11, 0.3); }
+}
+
+/* Chat window shadow */
+.n8n-chat .chat-window {
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.8) !important;
+}
+
+/* Mobile adjustments */
+@media (max-width: 480px) {
+  .n8n-chat .chat-window {
+    width: 100% !important;
+    height: 70vh !important;
+    bottom: 0 !important;
+    right: 0 !important;
+    left: 0 !important;
+    border-radius: 12px 12px 0 0 !important;
   }
 }

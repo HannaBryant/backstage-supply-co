@@ -58,7 +58,7 @@ function ProductTable({ products, loading, error, onEdit, onRefresh }) {
               <th scope="col">Product Name</th>
               <th scope="col">Price</th>
               <th scope="col">Quantity</th>
-              <th scope="col" className="text-end">
+              <th scope="col">
                 Actions
               </th>
             </tr>
@@ -73,7 +73,7 @@ function ProductTable({ products, loading, error, onEdit, onRefresh }) {
                 <td>{product.name}</td>
                 <td>${parseFloat(product.price).toFixed(2)}</td>
                 <td>{product.quantity}</td>
-                <td className="text-end">
+                <td>
                   <div className="bsc-action-group">
                     <button
                       className="bsc-btn bsc-btn-sm bsc-btn-ghost"

@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, render_template
 from flask_cors import CORS
 
 from database import get_connection, init_db
@@ -8,9 +8,13 @@ CORS(app)
 
 init_db()
 
-
 SCHEMA = "backstage_supply"
 TABLE = "products"
+
+
+@app.route("/")
+def index():
+    return render_template("index.html")
 
 
 @app.route("/products", methods=["GET"])
@@ -59,6 +63,7 @@ def create_product():
 
     return jsonify({"message": "Product created"}), 201
 
+
 @app.route("/products/<int:product_id>", methods=["PUT"])
 def update_product(product_id):
 
@@ -85,6 +90,7 @@ def update_product(product_id):
     conn.close()
 
     return jsonify({"message": "Product updated"}), 200
+
 
 @app.route("/products/<int:product_id>", methods=["DELETE"])
 def delete_product(product_id):
