@@ -27,11 +27,13 @@ The completed application was deployed to AWS, creating a production-ready solut
 - AI-powered inventory assistant
 
 ##STACK
+
 ###Frontend
 - React
 - Vite
 - JS
 - Bootstrap
+  
 ###Backend
 - Flask
 - Python
@@ -41,6 +43,7 @@ The completed application was deployed to AWS, creating a production-ready solut
 ###Automation
 -n8n
 -AI Workflow Integration
+
 
 ##What I learned:
 - How to build and deploy full-stack applications end-to-end
