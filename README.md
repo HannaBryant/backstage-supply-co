@@ -37,6 +37,7 @@ The completed application was deployed to AWS, creating a production-ready solut
 - Python
 - PostgreSQL
 - AWS
+  
 ###Automation
 -n8n
 -AI Workflow Integration
