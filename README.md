@@ -1,7 +1,7 @@
 LIVE URL : https://capstone-hanna.pathway4.click/
 
 
-#PROJECT OVERVIEW
+# PROJECT OVERVIEW
 
 Backstage Supply Co. is my final capstone project completed as part of the Codex Academy Full-Stack Development program. The project combines frontend development, backend development, database management, cloud deployment, and workflow automation into a single business application.
 
@@ -13,7 +13,7 @@ A key component of this capstone project is the integration of an AI-powered ass
 
 The completed application was deployed to AWS, creating a production-ready solution that showcases the full software development lifecycle from planning and database design through deployment and automation.
 
-##FEATURES
+## FEATURES
 - Product inventory management
 - Create, Read, Update, Delete functionality
 - Product name management
@@ -26,26 +26,26 @@ The completed application was deployed to AWS, creating a production-ready solut
 - n8n workflow automation
 - AI-powered inventory assistant
 
-##STACK
+## STACK
 
-###Frontend
+### Frontend
 - React
 - Vite
 - JS
 - Bootstrap
   
-###Backend
+### Backend
 - Flask
 - Python
 - PostgreSQL
 - AWS
   
-###Automation
+### Automation
 -n8n
 -AI Workflow Integration
 
 
-##What I learned:
+## What I learned:
 - How to build and deploy full-stack applications end-to-end
 - How to design scalable database systems
 - How to integrate AI automation into real applications
